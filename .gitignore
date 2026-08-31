@@ -1,0 +1,27 @@
+# VS-Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# PlatformIO
+.pio/
+
+# KiCad
+## KiCad lock files
+*.lck
+## KiCad backup files
+*.kicad_prl
+*.kicad_pro-bak
+*.kicad_sch-bak
+*.kicad_pcb-bak
+## KiCad backup/autosave directories
+*-backups/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
