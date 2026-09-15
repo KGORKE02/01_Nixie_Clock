@@ -10,6 +10,11 @@
 - 20V → 12V (buck, OTS IC) for Nixie driver
 - 20V → 5V (buck, OTS IC) for ESP32
 
+## Power Tree
+<p align="left">
+  <img src="PowerTree_drawio.png" alt="Power Tree" width="800">
+</p>
+
 ## Timekeeping
 - Primary: NTP sync via WiFi
 - Fallback: DS3231 RTC (CR2032 backup battery) when WiFi/NTP unavailable
