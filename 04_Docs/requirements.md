@@ -10,9 +10,19 @@
 - 20V → 12V (buck, OTS IC) for Nixie driver
 - 20V → 5V (buck, OTS IC) for ESP32
 
+## Overview
+<p align="left">
+  <img src="NIXIE_CLOCK-Overview.png" alt="Overview" width="800">
+</p>
+
 ## Power Tree
 <p align="left">
-  <img src="PowerTree_drawio.png" alt="Power Tree" width="800">
+  <img src="NIXIE_CLOCK-Power_Tree.png" alt="Power Tree" width="800">
+</p>
+
+## Signal Flow
+<p align="left">
+  <img src="NIXIE_CLOCK-Signal_Flow.png" alt="Signal Flow" width="800">
 </p>
 
 ## Timekeeping
