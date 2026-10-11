@@ -1,27 +1,22 @@
 # Requirements
 
 ## Functional
-### Timekeeping
-  - Primary: NTP sync via WiFi
-  - Fallback: DS3231 RTC (CR2032 backup battery) when WiFi/NTP unavailable
-  - Manual time set via rotary encoder when in fallback mode
-
+- FR-01 The clock shall display time as HH:MM:SS on 6 Nixie tubes.
+- FR-02 The clock shall synchronize time via NTP over WiFi.
+- FR-03 The clock shall keep time without WiFi using a battery-backed RTC.
+- FR-04 The user shall be able to set the time manually when NTP is unavailable.
+- FR-05 The clock shall [blank/dim] the tubes when no person is present.
+- FR-06 The clock shall illuminate the tumes with a backlight.
 
 ## Non-Functional
-### Modularity
-  - Each module (power stages, driver, encoder) is a separate PCB, designed individually
-  - Main PCB interconnects all modules
-### Mechanical
-  - Simple wooden housing
-### Display
-  - 6x IN-14 Nixie tubes
-  - Driven via HV5530PG-G
-### Power
-  - Input: USB-C Power Delivery, 20V
-  - 20V → 200V (boost, LT3757) for Nixie tubes
-  - 20V → 12V (buck, OTS IC) for Nixie driver
-  - 20V → 5V (buck, OTS IC) for ESP32
-## Sensing
-  - Human presence: Waveshare 24GHz FMCW mmWave radar (GPIO/UART, 3.3V)
-### Compute
-  - Waveshare ESP32-S3-DEV-KIT-N8R8
+- NFR-01 Power input: USB-C PD at 20 V.
+- NFR-02 Each function shall be a separate PCB, connected via a main PCB.
+- NFR-03 The housing shall be made of wood.
+
+## Constraints
+- C-01 Display tubes: IN-14.
+- C-02 MCU: Waveshare ESP32-S3-DEV-KIT-N8R8.
+- C-03 Tube driver: HV5530.
+- C-04 USB-C PD: STUSB4500.
+- C-05 RTC: DS3231.
+
