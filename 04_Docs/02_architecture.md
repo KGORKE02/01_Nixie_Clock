@@ -34,7 +34,7 @@
   ### 03_Buck_5V
   - **Purpose:** Buck converter for 5V power supply of the ESP32-S3
   - **Key part:** TPS5430
-  - **Interfaces:** in 20V / out 5V / enable / GND
+  - **Interfaces:** in 20V / out 5V / GND
   - **Key specs:** output current, ripple, efficiency
   - **Features:** LED enable, LED Power Ok , same Design as 04_Buck_12V
   - **Satisfies:** -
