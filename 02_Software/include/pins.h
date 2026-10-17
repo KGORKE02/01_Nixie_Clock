@@ -1,4 +1,4 @@
-// Pin definitions
+// All pin definitions in one place
 
 // Digital inpout
 
