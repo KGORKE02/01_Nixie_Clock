@@ -1,18 +1,33 @@
 #include <Arduino.h>
-
-// put function declarations here:
-int myFunction(int, int);
+#include "nixie.h"
+#include "pins.h"
 
 void setup() {
   // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+
+  nixie_init();
+
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-}
+  // HV supplies
+  digitalWrite(ENABLE_12V,  LOW);
+  digitalWrite(ENABLE_200V, LOW);
 
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+  // HV5530 control lines, safe defaults
+  digitalWrite(SR_DIN, LOW);
+  digitalWrite(SR_CLK, LOW);
+  digitalWrite(SR_LE,  LOW);
+  digitalWrite(SR_BLK, LOW); 
+  delay(500);
+  // HV supplies
+  digitalWrite(ENABLE_12V,  HIGH);
+  digitalWrite(ENABLE_200V, HIGH);
+
+  // HV5530 control lines, safe defaults
+  digitalWrite(SR_DIN, HIGH);
+  digitalWrite(SR_CLK, HIGH);
+  digitalWrite(SR_LE,  HIGH);
+  digitalWrite(SR_BLK, HIGH); 
+  delay(500);
 }
