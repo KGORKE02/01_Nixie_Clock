@@ -25,3 +25,6 @@
 *.bak
 *.swp
 *.swo
+
+# Wifi-login
+02_Software/include/secrets.h

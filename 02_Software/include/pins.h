@@ -1,3 +1,5 @@
+#pragma once // tells the compiler to include the header file only once per source file
+
 // All pin definitions in one place
 
 // Digital input

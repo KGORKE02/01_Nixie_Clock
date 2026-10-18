@@ -1,5 +1,5 @@
+#include "nixie.h"  // include own .h first
 #include <Arduino.h>
-#include "nixie.h"
 #include "pins.h"
 
 void nixie_init() {
