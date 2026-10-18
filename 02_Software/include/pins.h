@@ -2,9 +2,10 @@
 
 // Digital inpout
 #define PD_POWER_GOOD   21  // Pin 27
-#define ENCODER_A       48  // Pin 29 
-#define ENCODER_B       47  // Pin 28
-#define ENCODER_SW      21  // Pin 27
+#define ENCODER_A       32  // Pin 35 
+#define ENCODER_B       33  // Pin 36
+#define ENCODER_SW      34  // Pin 37
+
 
 // Digital output
 #define SR_DIN          42  // Pin 39
