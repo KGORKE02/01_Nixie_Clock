@@ -1,10 +1,10 @@
 // All pin definitions in one place
 
-// Digital inpout
+// Digital input
 #define PD_POWER_GOOD   21  // Pin 27
-#define ENCODER_A       32  // Pin 35 
-#define ENCODER_B       33  // Pin 36
-#define ENCODER_SW      34  // Pin 37
+#define ENCODER_A       11  // Pin 18
+#define ENCODER_B       12  // Pin 19
+#define ENCODER_SW      14  // Pin 20
 
 
 // Digital output
