@@ -7,8 +7,8 @@ namespace pins {
 
 // Digital input
 constexpr uint8_t PD_POWER_GOOD = 21;  // Pin 27
-constexpr uint8_t ENCODER_A     = 11;  // Pin 17
-constexpr uint8_t ENCODER_B     = 12;  // Pin 18
+constexpr uint8_t ENCODER_A     = 12;  // Pin 17
+constexpr uint8_t ENCODER_B     = 13;  // Pin 18
 constexpr uint8_t ENCODER_SW    = 14;  // Pin 20
 
 // Digital output
@@ -16,9 +16,10 @@ constexpr uint8_t SR_DIN        = 42;  // Pin 39
 constexpr uint8_t SR_CLK        = 41;  // Pin 38
 constexpr uint8_t SR_LE         = 40;  // Pin 37
 constexpr uint8_t SR_BLK        = 39;  // Pin 36
-constexpr uint8_t LED_COM       = 2;   // Pin 40
 constexpr uint8_t ENABLE_12V    = 4;   // Pin 4
 constexpr uint8_t ENABLE_200V   = 6;   // Pin 6
+constexpr uint8_t OB_LED        = 38;  // Pin 35
+constexpr uint8_t BL_LED        = 2;   // Pin 40
 
 // Analog input (all ADC1)
 constexpr uint8_t SENSE_5V      = 1;   // Pin 41

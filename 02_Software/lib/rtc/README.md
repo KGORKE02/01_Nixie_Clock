@@ -1,6 +1,6 @@
-# Encoder
+# Real Time Clock (RTC)
 
-**Purpose:** This module 
+**Purpose:** This module keeps time when supply voltage is not available
 **Layer:** driver
 **Depends on:** -
 **Used by:** tbd
@@ -8,8 +8,8 @@
 ## Files
 | File | Purpose |
 |------|---------|
-| `encoder.h`   | Public interface |
-| `encoder.cpp` | Implementation |
+| ``   |  |
+| `` |  |
 
 ## Public interface
 - `bool init()`: what it does, what `false` means
@@ -19,9 +19,9 @@
 ### Pins from `pins.h`:
 | Pin | Dir | Description |
 |------|---------|
-| `ENCODER_A`   | Input |A signal from encoder |
-| `ENCODER_B` | Input | B signal |
-| `ENCODER_SW` | Input | Push button from encoder |
+| ``   |  | |
+| `` |  |  |
+| `` |  |  |
 
 ## How to test
 - Bench: `pio run -e test_x -t upload`, expected output
