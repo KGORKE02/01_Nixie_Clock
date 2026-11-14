@@ -9,12 +9,21 @@ void LedStrip::begin() {
     _driver.show();     // apply changes
 }
 
+Rgb LedStrip::scaled(Rgb c) const {
+    return Rgb {
+        static_cast<uint8_t>(c.r * _brightness / 255), 
+        static_cast<uint8_t>(c.g * _brightness / 255), 
+        static_cast<uint8_t>(c.b * _brightness / 255 )};
+}
+
 void LedStrip::set(uint16_t index, Rgb color) {
-    _driver.setPixelColor(index, _driver.Color(color.r, color.g, color.b));
+    Rgb c = scaled(color);
+    _driver.setPixelColor(index, _driver.Color(c.r, c.g, c.b));
 }
 
 void LedStrip::fill(Rgb color) {
-    _driver.fill(_driver.Color(color.r,color.g,color.b));
+    Rgb c = scaled(color);
+    _driver.fill(_driver.Color(c.r,c.g,c.b));
 }
 
 void LedStrip::show() {

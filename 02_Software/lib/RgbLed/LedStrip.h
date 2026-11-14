@@ -1,7 +1,8 @@
 #pragma once
 #include <Adafruit_Neopixel.h>
-#include <stdint.h>
+#include <stdint.h> 
 #include "rgb.h"
+#include "Colors.h"
 
 class LedStrip{
     public:
@@ -15,4 +16,6 @@ class LedStrip{
 
     private:
         Adafruit_NeoPixel _driver;                  // composition: strip owns the driver
+        Rgb scaled(Rgb color) const;                // const, to promise, that no member variable is changed
+        uint8_t _brightness = 255;                  // full brightness, as default
 };
