@@ -12,7 +12,6 @@ void setup() {
 
 void loop() {
   
-
   // low brightness every color
   onboardLed.fill(Rgb{31, 0, 0}); onboardLed.show(); // red
   delay(500);

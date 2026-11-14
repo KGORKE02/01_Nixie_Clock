@@ -16,6 +16,10 @@ Rgb LedStrip::scaled(Rgb c) const {
         static_cast<uint8_t>(c.b * _brightness / 255 )};
 }
 
+void LedStrip::setBrightness(uint8_t brightness) {
+    _brightness = brightness;
+}
+
 void LedStrip::set(uint16_t index, Rgb color) {
     Rgb c = scaled(color);
     _driver.setPixelColor(index, _driver.Color(c.r, c.g, c.b));

@@ -11,6 +11,7 @@ class LedStrip{
         // methods
         void begin();   // begin Led
         void set(uint16_t index, Rgb color);        // changes data memory
+        void setBrightness(uint8_t brightness);
         void fill(Rgb color);                       // changes data memory
         void show();                                // applies changes
 
