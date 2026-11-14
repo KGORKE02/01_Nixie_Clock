@@ -7,5 +7,5 @@ namespace Colors {
      constexpr Rgb GREEN    {0,255,0};      // Green
      constexpr Rgb BLUE     {0,0,255};      // Blue
      constexpr Rgb WHITE    {255,255,255};  // White
-     constexpr Rgb Orange   {255,90,10};    // Orange
+     constexpr Rgb ORANGE   {255,60,16};    // Orange
 }
