@@ -1,7 +1,7 @@
 #include "LedStrip.h"
 
 LedStrip::LedStrip(uint8_t pin, uint16_t count)
-    : _driver(count,pin, NEO_BGR + NEO_KHZ800) {}
+    : _driver(count,pin, NEO_RGB + NEO_KHZ800) {} // The onboard LED order is RGB - Try it out.
 
 void LedStrip::begin() {
     _driver.begin();    // begin communication to LedStrip
@@ -10,7 +10,7 @@ void LedStrip::begin() {
 }
 
 void LedStrip::set(uint16_t index, Rgb color) {
-    _driver.setPixelColor(index, _driver.Color(color.r, color.b, color.b));
+    _driver.setPixelColor(index, _driver.Color(color.r, color.g, color.b));
 }
 
 void LedStrip::fill(Rgb color) {
