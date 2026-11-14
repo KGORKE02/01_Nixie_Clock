@@ -6,11 +6,11 @@
 class RadarParser {
     public:
         bool feed(uint8_t byte);
-        const RadarFrame& getFrame();
+        const RadarFrame& getFrame() const;
         void reset();
     private:
-        uint8_t _buffer[45];
-        uint8_t _count;
-        RadarFrame _frame;
+        uint8_t _buffer[RadarProtocol::FRAME_LEN] = {};
+        uint8_t _count = 0;
+        RadarFrame _frame{};    // Frame initialized with RadarFrame.h defaults
         void decode();
 };

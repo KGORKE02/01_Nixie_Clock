@@ -2,7 +2,7 @@
 #include <stdint.h>
 
 struct RadarFrame {
-    bool        present;
-    uint16_t    distance;      // distance in cm
-    uint16_t energy[16];    // energy in dB
+    bool        present     = false;    // default no human present
+    uint16_t    distance    = 0;        // target distance in cm (2 Bytes little endian)
+    uint16_t    energy[16]  = {};       // energy values for gates (2 Bytes little endian for each gate)
 };
