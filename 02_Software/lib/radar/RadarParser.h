@@ -1,11 +1,10 @@
 #pragma once
-#include <stdint.h>
 #include "RadarFrame.h"
 #include "RadarProtocol.h"
 
 class RadarParser {
     public:
-        bool feed(uint8_t byte);
+        bool feed(uint8_t incomingByte);
         const RadarFrame& getFrame() const;
         void reset();
     private:
