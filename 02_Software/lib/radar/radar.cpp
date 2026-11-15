@@ -9,7 +9,7 @@ Radar::Radar(HardwareSerial& port)
 void Radar::init(int8_t rx, int8_t tx) {
     _port.begin(RadarProtocol::BAUDRATE, SERIAL_8N1, rx, tx);
     _parser.reset();
-    sendCommand(RadarProtocol::REPORT_MODE, RadarProtocol::REPORT_MODE_LEN);
+    sendCommand(RadarProtocol::COMMAND_REPORT_MODE, RadarProtocol::COMMAND_REPORT_MODE_LEN);
 }
 
 void Radar::update() {
@@ -23,7 +23,7 @@ void Radar::update() {
     // If the connection was interrupted, try to reconnect
     if(hasFault() && ((millis() - _lastRetryMS) > RadarProtocol::RETRY_INTERVAL_MS) ){
         _parser.reset();
-        sendCommand(RadarProtocol::REPORT_MODE, RadarProtocol::REPORT_MODE_LEN);
+        sendCommand(RadarProtocol::COMMAND_REPORT_MODE, RadarProtocol::COMMAND_REPORT_MODE_LEN);
         _lastRetryMS = millis();
     }
 }

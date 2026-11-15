@@ -26,8 +26,18 @@ bool RadarParser::feed(uint8_t incomingByte) {
     }
 
     // Frame completed
-    _count = 0; // Initialize for next loop
-    if(memcmp(&_buffer[RadarProtocol::FRAME_LEN - sizeof(RadarProtocol::FRAME_TAIL)], RadarProtocol::FRAME_TAIL, sizeof(RadarProtocol::FRAME_TAIL)) == 0){ // Check if Frame Tail is valid
+    
+    // Initialize _count for next loop
+    _count = 0; 
+
+    // Check frame length
+    if(memcmp(&_buffer[RadarProtocol::POS_LENGTH], RadarProtocol::FRAME_LEN_FIELD, sizeof(RadarProtocol::FRAME_LEN_FIELD)) != 0){
+        return false;   // Length field is wrong, discard frame
+    }
+
+    // Check if Frame Tail is valid
+    if(memcmp(&_buffer[RadarProtocol::FRAME_LEN - sizeof(RadarProtocol::FRAME_TAIL)], RadarProtocol::FRAME_TAIL, sizeof(RadarProtocol::FRAME_TAIL)) == 0){ 
+        // Frame Tail is valid
         decode();       // Fetch data from frame
         return true;    // Tail was valid, frame was found
     }
