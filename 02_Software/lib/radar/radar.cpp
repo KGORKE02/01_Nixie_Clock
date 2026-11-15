@@ -14,13 +14,18 @@ void Radar::init(int8_t rx, int8_t tx) {
 }
 
 void Radar::update() {
+    // Read data from Sensor and feed the parser with it
     while (_port.available() > 0) {
-        uint8_t incomingByte = _port.read();
-
-        if(_parser.feed(incomingByte)) {
-            _hasFrame = true;
-            _lastMS = millis();
+        if(_parser.feed(_port.read())) { // True, if the frame is complete
+            _lastMS = millis(); // Remember when the last frame was detected
         }
+    }
+
+    // If the connection was interrupted, try to reconnect
+    if(hasFault() && ((millis() - _lastRetryMS) > RadarProtocol::RETRY_INTERVAL_MS) ){
+        _parser.reset();
+        sendCommand(RadarProtocol::REPORT_MODE, RadarProtocol::COMMAND_LENGTH);
+        _lastRetryMS = millis();
     }
 }
 
@@ -34,7 +39,7 @@ uint16_t Radar::getEnergy(uint8_t gate){
 }
 
 bool Radar::hasFault() {
-    return ( (millis() - _lastMS) > RadarProtocol::FRAME_TIMEOUT_MS );
+    return ((millis() - _lastMS) > RadarProtocol::FRAME_TIMEOUT_MS);
 }
 
 void Radar::sendCommand(const uint8_t* command, const uint8_t command_length) {

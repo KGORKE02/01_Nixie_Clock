@@ -17,7 +17,6 @@ class Radar {
 
         HardwareSerial& _port;
         RadarParser     _parser;
-        uint32_t        _lastMS     =   0;
-        bool            _hasFrame   =   false;
-
+        uint32_t        _lastMS         =   0;
+        uint32_t        _lastRetryMS    =   0;
 };

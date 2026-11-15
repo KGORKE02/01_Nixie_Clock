@@ -12,4 +12,5 @@ namespace RadarProtocol {
     constexpr uint8_t   REPORT_MODE[] = {0xFD, 0xFC, 0xFB, 0xFA, 0x08, 0x00, 0x12, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x04, 0x03, 0x02, 0x01};
     constexpr uint8_t   COMMAND_LENGTH  = sizeof(RadarProtocol::REPORT_MODE);
     constexpr uint32_t  FRAME_TIMEOUT_MS = 1000;                    // no frame for this long = fault
+    constexpr uint32_t  RETRY_INTERVAL_MS = 1000;
 }
