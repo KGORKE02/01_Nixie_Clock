@@ -26,5 +26,4 @@ void loop() {
     onboardLed.fill(Colors::ORANGE);
   }
   onboardLed.show();
-  delay(10);
 }
