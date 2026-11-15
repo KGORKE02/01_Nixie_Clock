@@ -8,7 +8,6 @@ Radar::Radar(HardwareSerial& port)
 
 void Radar::init(int8_t rx, int8_t tx) {
     _port.begin(RadarProtocol::BAUDRATE, SERIAL_8N1, rx, tx);
-    while(!_port)   delay(100);
     _parser.reset();
     sendCommand(RadarProtocol::REPORT_MODE, RadarProtocol::COMMAND_LENGTH);
 }
@@ -29,16 +28,16 @@ void Radar::update() {
     }
 }
 
-bool Radar::isPresent() {
+bool Radar::isPresent() const {
     return _parser.getFrame().present;
 }
 
-uint16_t Radar::getEnergy(uint8_t gate){
+uint16_t Radar::getEnergy(uint8_t gate) const {
     if(gate >= RadarProtocol::NUM_GATES) return 0;
     return _parser.getFrame().energy[gate];
 }
 
-bool Radar::hasFault() {
+bool Radar::hasFault() const {
     return ((millis() - _lastMS) > RadarProtocol::FRAME_TIMEOUT_MS);
 }
 

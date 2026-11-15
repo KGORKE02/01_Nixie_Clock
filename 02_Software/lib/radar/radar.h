@@ -9,9 +9,9 @@ class Radar {
 
         void        init(int8_t rx, int8_t tx);
         void        update();
-        bool        isPresent();
-        uint16_t    getEnergy(uint8_t gate);
-        bool        hasFault();
+        bool        isPresent() const;
+        uint16_t    getEnergy(uint8_t gate) const;
+        bool        hasFault() const;
     private:
         void sendCommand(const uint8_t* command, const uint8_t command_length);
 
